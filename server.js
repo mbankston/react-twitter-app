@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars');
 app.disable('etag');
 
 var mongoURI = process.env.MONGOLAB_URI;
-var MongoDB = mongoose.connect(mongoURI).connection;
+var MongoDB = mongoose.connect(MONGOLAB_URI).connection;
 
 MongoDB.on('error', function(err){
     console.log("Mongo Connection Error: ", err);

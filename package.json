@@ -7,7 +7,7 @@
     "watch": "watchify app.js -o public/js/bundle.js -v",
     "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
     "build": "npm run browserify ",
-    "start": "npm install"
+    "start": "node server.js"
   },
   "author": "Ken Wheeler",
   "license": "MIT",
