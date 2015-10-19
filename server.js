@@ -22,11 +22,13 @@ app.disable('etag');
 var mongoURI = process.env.MONGOLAB_URI;
 var mongoDB = mongoose.connect(mongoURI).connection;
 
-MongoDB.on('error', function(err){
-    console.log("Mongo Connection Error: ", err);
+mongoDB.on('error', function(err){
+    if(err){
+        console.log("MONGO ERROR: ", err);
+    }
 });
 
-MongoDB.once('open', function(err){
+mongoDB.once('open', function(){
     console.log("Mongo is on ( ͡° ͜ʖ ͡°)");
 });
 // Connect to our mongo database
